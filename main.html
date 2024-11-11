@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Finder ┃ Official</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/public icons/foodie logo copy 2.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"></head>
+<body>
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/public icons/logo.png" alt="Foodie Finder" style="height:70px; width: auto;">
+        </div>
+        <ul class="nav-links">
+            <i class="fa-solid fa-bars"></i>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#stores">Stores</a></li>
+            <li><a href="order">My Orders</a></li>
+            <div class="box">
+                <li><a href="#" class="login">Logout</a></li>
+            </div>
+            
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home section">
+        <h1>LET'S FIND YOUR FOOD</h1>
+        <div id="map" class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36691.179135002974!2d120.29477305733364!3d14.842919766125354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396711b9c32216b%3A0xa080c3d36f2963a7!2sOlongapo%2C%20Zambales!5e0!3m2!1sen!2sph!4v1730014145286!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products" class="products section">
+        <h2>Popular Dishes</h2>
+        <p> Recommended and Top Trending Foods This Week!</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="assets/foods/arancini.jpg" alt="korean">
+                <h3>Arancini</h3>
+                <p>Fried rice balls, often cheesy</p>
+                <p class="price">price: ₱550</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/foods/bibimbap.jpg" alt="korean">
+                <h3>Bibimbap</h3>
+                <p>Mixed rice with veggies and egg</p>
+                <p class="price">price: ₱350</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/foods/Bouillabaisse.jpg" alt="Italian">
+                <h3>Bouillabaisse</h3>
+                <p>Fish stew with herbs and spices</p>
+                <p class="price">price: ₱400</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="assets/foods/Kung Pao Chicken.jpg" alt="Product 1">
+                <h3>Kung Pao Chicken</h3>
+                <p>Spicy chicken with peanuts</p>
+                <p class="price">price: ₱150</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/foods/Peking duck.jpg" alt="Product 2">
+                <h3>Peking duck</h3>
+                <p>Crispy duck served with pancakes</p>
+                <p class="price">price: ₱250</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/foods/korean Spicy Chicken.jpg" alt="Product 3">
+                <h3>korean Spicy Chicken</h3>
+                <p>Spicy marinated chicken dish</p>
+                <p class="price">price: ₱500</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <h2>Our Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Choose Your Food</h3>
+                <p>Browse our wide selection of delicious foods.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>Place Your Order</h3>
+                <p>Select your items and proceed to checkout.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Make Payment</h3>
+                <p>Pay securely using your preferred method.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <h3>Enjoy Your Meal</h3>
+                <p>Receive your food and enjoy!</p>
+            </div>
+        </div>
+        <div class="imagefoot">
+        </div>
+    </section>
+
+    <!-- Stores Section -->
+	<section id="stores" class="stores section">
+        <div class="stores-header">
+            <h2>Featured Restaurants</h2>
+            <nav class="cuisine-nav">
+                <ul>
+                    <li><a href="#" class="cuisine-filter" data-cuisine="all">All</a></li>
+                    <li><a href="#" class="cuisine-filter" data-cuisine="italian">Italian</a></li>
+                    <li><a href="#" class="cuisine-filter" data-cuisine="korean">Korean</a></li>
+                    <li><a href="#" class="cuisine-filter" data-cuisine="chinese">Chinese</a></li>
+                    <li><a href="#" class="cuisine-filter" data-cuisine="restobar">Resto Bar</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="store-list">
+            <div class="store-card" data-cuisine="italian">
+                <img src="assets/stores/italian restaurant.jpg" alt="Crab and Belly">
+                <div class="store-details">
+                    <h3>Crab and Belly</h3>
+                    <p class="address">Taft Road, Lincoln Steeet Subic Bay Freeport Zone</p>
+                    <button class="visit-btn">Visit</button>
+                </div>
+            </div>
+            <div class="store-card" data-cuisine="korean">
+                <img src="assets/stores/Korean resto.jpg" alt="Gourmet Garage Subic">
+                <div class="store-details">
+                    <h3>Gourmet Garage Subic</h3>
+                    <p class="address">Subic Bay Freeport Zone, Olongapo City</p>
+                    <button class="visit-btn">Visit</button>
+                </div>
+            </div>
+            <div class="store-card" data-cuisine="chinese">
+                <img src="assets/stores/Chinese Resto.jpg" alt="Liberty Sports Bar & Grill">
+                <div class="store-details">
+                    <h3>Liberty Sports Bar & Grill</h3>
+                    <p class="address">Alava Quay SBFZ, Global Commercial Center, Waterfront Rd</p>
+                    <button class="visit-btn">Visit</button>
+                </div>
+            </div>
+            <div class="store-card" data-cuisine="restobar">
+                <img src="assets/stores/pirate bistro.jpg" alt="Pirate Bistro">
+                <div class="store-details">
+                    <h3>Pirate Bistro</h3>
+                    <p class="address">532 Waterfront Rd, Subic Bay Freeport Zone</p>
+                    <button class="visit-btn">Visit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <img src="assets/public icons/logo.png" alt="logo">
+                <p>WE ARE THE FOODIE FINDERS AND <br>WE ARE HAPPY YOU USE OUR SITE/APP</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Contact Information</h3>
+                <a href="#" class="links"> <i class="fas fa-phone"></i>09-4545-9392</a>
+                <a href="#" class="links"> <i class="fas fa-envelope"></i>FoodieFinder@gmail.com</a>
+                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i>olongapo City, Philippines</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+                <a href="#products" class="links"> <i class="fas fa-arrow-right"></i>Products</a>
+                <a href="login.html" class="links"> <i class="fas fa-arrow-right"></i>Login</a>
+                <a href="login.html#signup-form" class="links"> <i class="fas fa-arrow-right"></i>Register</a>
+            </div>  
+        </div>
+        <div class="low">&copy; 2024 <span>Foodie Finders</span>. All rights reserved ┃ Crafted by <span>The D'code</span> </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
