@@ -23,8 +23,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    box-sizing: border-box; /* Ensure padding/borders don't affect width */
 }
 
 /* Iwan ko na to lot para sa scroll bar (customize) pag trip nyo
@@ -74,7 +77,7 @@ body {
 
 /*pre gagamitin to sa responsive (burger bar) fix display nalang flex nyo*/
 .nav-links .fa-solid{
-    display: none;
+    display: flex;
 }
 
 .nav-links a::after {
@@ -144,8 +147,16 @@ body {
 /* Map Styles */
 .map-container {
     position: relative;
-    height: 400px;
-    width: 90%;
+    height: 700px;
+    width: 100%;
+    max-width: 100%; display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--text-color);
+    padding: 0 1rem; 
+    width: 100%; 
+    box-sizing: border-box; 
     margin: 0 auto;
     border: 2px solid var(--secondary-color);
     border-radius: var(--border-radius);
@@ -235,9 +246,9 @@ p{
 
 /* Process Styles */
 .process {
-    max-width: 2100px;
+    width: 100%;
+    max-width: 100vw;
     margin: 0 auto;
-    padding-top: 1rem;
     padding: 0rem 1rem;
     background: linear-gradient(180deg, #FFFACD 0%, #99967B 100%);
 }
@@ -296,8 +307,10 @@ h2 {
 
 /* Stores Styles */
 .stores {
-    padding: 2rem;
+    padding: 2rem 1rem;
     background-color: var(--background-color);
+    margin: 0; 
+    box-sizing: border-box; 
 }
 
 .stores-header {
@@ -306,13 +319,18 @@ h2 {
     align-items: center;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--text-color);
-    padding-bottom: 1rem;
+    padding: 0 1rem; 
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .stores-header h2 {
     font-size: 2rem;
     color: var(--primary-color);
     margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .cuisine-nav ul {
@@ -403,6 +421,119 @@ h2 {
 }
 
 .visit-btn:hover {
+    background-color: #b20000;
+}
+
+/* Food Section Styles */
+.food {
+    padding: 2rem 1rem;
+    background-color: #ffffff !important;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--text-color);
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.food-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cuisine-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cuisine-nav ul li {
+    margin-left: 1rem;
+}
+
+.cuisine-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.cuisine-nav ul li a:hover,
+.cuisine-nav ul li a.active {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.food-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.food-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+.food-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.food-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.food-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.food-details h3 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    align-self: center;
+}
+
+.food-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.order-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    margin-top: 1rem;
+    width: 50%;
+    align-self: center;
+}
+
+.order-btn:hover {
     background-color: #b20000;
 }
 
@@ -497,3 +628,159 @@ h2 {
 }
 
 /* Responsive Here */
+/* Laptop (992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    .home h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .product-grid, .store-list, .food-list {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+    .product-card, .store-card, .food-card {
+        padding: 1rem;
+    }
+    .store-details h3, .product-card h3, .food-card h3{
+        font-size: 1.2rem;
+    }
+    .add-to-cart, .visit-btn, .order-btn {
+        padding: 0.6rem 1rem;   
+    }
+    .footer .box-container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .burger-menu {
+        display: flex;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .home h1 {
+        font-size: 2.5rem;
+    }
+    .product-grid, .store-list, .food-list {
+        grid-template-columns: 1fr;
+    }
+    .store-details h3, .product-card h3, .food-details h3 {
+        font-size: 1rem;
+    }
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .footer .box-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* Center the logo and make it responsive */
+    .footer .box img {
+        padding-left: 0;
+        margin: 0 auto;
+        height: 100px; /* Adjust as needed */
+        width: auto;
+    }
+
+    /* Center social icons */
+    .footer .box .share {
+        margin-left: 0;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer .box .share a {
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+    }
+} 
+
+/* Mobile (480px and below) */
+@media screen and (max-width: 425px){
+    .stores-header, .food-header {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0.5rem; 
+    }
+
+    .stores-header h2, .food-header h2{
+        font-size: 1.5rem; 
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .cuisine-nav {
+        width: 100%;
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+        justify-content: space-between; 
+    }
+
+    .cuisine-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        gap: 0.5rem;
+    }
+
+    .cuisine-nav ul li {
+        flex: 1 1 30%; 
+        text-align: center; 
+    }
+}
+@media screen and (max-width: 320px){
+    .stores-header, .food-header {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0.5rem; 
+    }
+
+    .stores-header h2, .food-header h2 {
+        font-size: 1.5rem; 
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .cuisine-nav {
+        width: 100%;
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+        justify-content: space-between; 
+    }
+
+    .cuisine-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        gap: 0.5rem;
+    }
+
+    .cuisine-nav ul li {
+        flex: 1 1 30%; 
+        text-align: center; 
+    }
+}
